@@ -2,7 +2,7 @@
 
 Daftar tugas yang sengaja hanya untuk hari ini. Yang selesai pindah ke rekap besoknya; yang belum selesai ikut terbawa dengan tanda "terbawa N hari". Editorial: judul serif miring, cincin progres bergradien, bilah tambah mengambang.
 
-**Demo live:** https://todo-classic.vercel.app
+**Demo live:** https://todo-classic.pintuweb.id
 
 ![Tangkapan layar](public/og.jpg)
 

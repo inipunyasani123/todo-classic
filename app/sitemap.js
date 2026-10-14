@@ -1,4 +1,4 @@
-const URL = 'https://todo-classic.vercel.app';
+const URL = 'https://todo-classic.pintuweb.id';
 
 export default function sitemap() {
   const now = new Date();
