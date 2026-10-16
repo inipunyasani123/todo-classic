@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import Kerangka from '@/components/Kerangka';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Panduan',
-  description: 'Cara memakai Hari Ini: menulis jam dan prioritas langsung di bilah tambah, pintasan papan ketik, tugas yang terbawa, dan di mana data disimpan.',
-  alternates: { canonical: '/panduan' },
-};
+export const metadata = pageMeta({ title: 'Panduan', description: "Cara memakai Hari Ini: menulis jam dan prioritas langsung di bilah tambah, pintasan papan ketik, tugas yang terbawa, dan di mana data disimpan.", path: '/panduan' });
 
 const SINTAKS = [
   ['Telepon klien 14.00', 'Tugas dengan jam 14.00. Bisa juga 14:00 atau "jam 9.30".'],

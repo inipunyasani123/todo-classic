@@ -1,11 +1,8 @@
 import Kerangka from '@/components/Kerangka';
 import Rekap from '@/components/Rekap';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Rekap 7 hari',
-  description: 'Rekap tujuh hari terakhir: jumlah tugas selesai per hari, streak, dan tugas yang terbawa dari hari sebelumnya.',
-  alternates: { canonical: '/rekap' },
-};
+export const metadata = pageMeta({ title: 'Rekap 7 hari', description: "Rekap tujuh hari terakhir: jumlah tugas selesai per hari, streak, dan tugas yang terbawa dari hari sebelumnya.", path: '/rekap' });
 
 export default function RekapPage() {
   return (

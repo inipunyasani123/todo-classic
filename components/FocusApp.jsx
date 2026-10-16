@@ -80,15 +80,16 @@ export default function FocusApp() {
           </nav>
         </header>
 
-        <div className="mx-auto w-full max-w-2xl px-5 pb-44 pt-8 md:px-10 md:pt-12">
-          <section className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <div>
-              <h1 className="font-display text-5xl leading-[1.05] text-on-surface md:text-6xl">
-                Fokus pada<br /><em className="text-primary">yang penting.</em>
-              </h1>
-              <p className="mt-4 text-lg text-on-surface-variant">{hari ? fmtTanggal(hari, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : ' '}</p>
+        <div className="mx-auto w-full max-w-2xl px-5 pb-10 pt-8 md:px-10 md:pt-12">
+          {/* Ponsel: tanggal & cincin progres sebaris di bawah judul; layar lebar: cincin di kanan. */}
+          <section className="mb-8 grid grid-cols-[1fr_auto] items-end gap-x-4 gap-y-3 md:mb-12 md:gap-x-8">
+            <h1 className="col-span-2 font-display text-5xl leading-[1.05] text-on-surface md:col-span-1 md:text-6xl">
+              Fokus pada<br /><em className="text-primary">yang penting.</em>
+            </h1>
+            <p className="text-lg text-on-surface-variant md:col-start-1">{hari ? fmtTanggal(hari, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : ' '}</p>
+            <div className="col-start-2 row-start-2 md:row-span-2 md:row-start-1 md:self-end">
+              <ProgressArc done={done} total={total} />
             </div>
-            <ProgressArc done={done} total={total} />
           </section>
 
           <div className="mb-8 flex items-center gap-6 border-b border-surface-container-highest/50 md:hidden" role="group" aria-label="Saring">
@@ -122,19 +123,22 @@ export default function FocusApp() {
 
           {done > 0 && (
             <div className="mt-6 md:hidden">
-              <button type="button" onClick={clearCompleted} className="text-sm font-medium text-on-surface-variant transition-colors hover:text-error">
+              <button type="button" onClick={clearCompleted} className="inline-flex min-h-11 items-center text-sm font-medium text-on-surface-variant transition-colors hover:text-error">
                 Hapus yang selesai hari ini ({done})
               </button>
             </div>
           )}
         </div>
 
-        {terhapus && (
-          <div role="status" className="fixed bottom-28 left-1/2 z-50 flex -translate-x-1/2 items-center gap-4 rounded-xl bg-on-surface px-4 py-3 text-sm text-background shadow-lg md:left-[calc(50%+9rem)]">
-            <span>Tugas dihapus.</span>
-            <button type="button" onClick={urungkan} className="font-semibold underline underline-offset-4">Urungkan</button>
-          </div>
-        )}
+        {/* Wilayah status selalu ada, supaya "Tugas dihapus" terbaca pembaca layar. */}
+        <div role="status" aria-live="polite" className="pointer-events-none fixed bottom-28 left-1/2 z-50 -translate-x-1/2 md:left-[calc(50%+9rem)]">
+          {terhapus && (
+            <div className="pointer-events-auto flex items-center gap-4 rounded-xl bg-on-surface px-4 py-3 text-sm text-background shadow-lg">
+              <span>Tugas dihapus.</span>
+              <button type="button" onClick={urungkan} className="min-h-8 font-semibold underline underline-offset-4">Urungkan</button>
+            </div>
+          )}
+        </div>
 
         <AddBar value={text} onChange={setText} onSubmit={add} />
       </main>

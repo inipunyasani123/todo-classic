@@ -42,6 +42,7 @@
 
 .dark {
   --color-primary: #c0c1ff;              /* glowing indigo */
+  --color-on-primary: #1b1a52;           /* teks/ikon di atas indigo terang tetap gelap (≥4.5:1) */
   --color-secondary: #d0bcff;
   --color-secondary-container: #8455ef;
 
@@ -101,4 +102,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  html { scroll-behavior: auto; }
 }

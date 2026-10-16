@@ -75,7 +75,7 @@ export default function Rekap() {
           </div>
         )}
         {selesai.some((t) => tanggalDari(t.doneAt) < hari) && (
-          <button type="button" onClick={bersihkan} className="mt-8 text-sm font-medium text-on-surface-variant underline underline-offset-4 hover:text-error">Bersihkan riwayat sebelum hari ini</button>
+          <button type="button" onClick={bersihkan} className="mt-6 inline-flex min-h-11 items-center text-sm font-medium text-on-surface-variant underline underline-offset-4 hover:text-error">Bersihkan riwayat sebelum hari ini</button>
         )}
       </section>
     </div>

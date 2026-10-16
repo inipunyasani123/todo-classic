@@ -20,7 +20,7 @@ export default function AddBar({ value, onChange, onSubmit }) {
   const u = value.trim() ? uraiInput(value) : null;
 
   return (
-    <div className="fixed bottom-6 left-1/2 z-40 w-[calc(100%-40px)] max-w-xl -translate-x-1/2 md:left-[calc(50%+9rem)]">
+    <div className="sticky bottom-6 z-40 mx-auto mb-6 w-[calc(100%-40px)] max-w-xl">
       {u && (u.jam || u.priority) && (
         <p className="mb-2 rounded-lg bg-surface-container-high/90 px-3 py-1.5 text-xs text-on-surface-variant backdrop-blur" aria-live="polite">
           Akan disimpan: <strong className="text-on-surface">{u.text}</strong>{u.jam ? ` · jam ${tampilJam(u.jam)}` : ''}{u.priority ? ' · prioritas' : ''}
