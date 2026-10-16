@@ -9,6 +9,7 @@ import Sidebar, { TemaTombol } from './Sidebar';
 import ProgressArc from './ProgressArc';
 import TaskRow from './TaskRow';
 import AddBar from './AddBar';
+import { SemuaSelesai, DaftarKosong } from './Ilustrasi';
 
 const FILTERS = [
   { key: 'all', label: 'Semua' },
@@ -105,7 +106,8 @@ export default function FocusApp() {
           {!loaded || !hari || todos === null ? (
             <p className="py-16 text-center text-sm text-on-surface-variant">Memuat…</p>
           ) : visible.length === 0 ? (
-            <div className="py-16 text-center">
+            <div className="py-12 text-center md:py-16">
+              {total > 0 && done === total ? <SemuaSelesai /> : <DaftarKosong />}
               <p className="font-display text-2xl text-on-surface">
                 {total > 0 && done === total ? 'Semua selesai.' : filter === 'completed' ? 'Belum ada yang selesai hari ini.' : 'Tidak ada tugas.'}
               </p>
