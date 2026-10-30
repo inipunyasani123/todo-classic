@@ -31,7 +31,7 @@ export default function TaskRow({ task, terbawa, sekarang, onToggle, onEdit, onR
 
       <button type="button" onClick={() => onToggle(task.id)} role="checkbox" aria-checked={task.done}
         aria-label={`${task.done ? 'Batalkan selesai' : 'Tandai selesai'}: ${task.text}`}
-        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
+        className={`relative mt-0.5 flex h-6 w-6 shrink-0 after:absolute after:-inset-2.5 after:content-[""] items-center justify-center rounded-full border transition-all duration-200 ${
           task.done ? 'check-grad border-transparent' : 'border-outline group-hover:border-primary'
         } ${penting ? 'ml-1' : ''}`}>
         <Check size={15} strokeWidth={3} aria-hidden="true" className={`text-on-primary transition-all duration-200 ${task.done ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} />
@@ -67,16 +67,16 @@ export default function TaskRow({ task, terbawa, sekarang, onToggle, onEdit, onR
       <div className="flex shrink-0 items-center gap-0.5 transition-opacity md:opacity-0 md:focus-within:opacity-100 md:group-hover:opacity-100">
         {editing ? (
           <>
-            <button type="button" onClick={save} aria-label="Simpan" className="rounded-lg p-1.5 text-primary hover:bg-surface-container-high/60"><Check size={17} /></button>
-            <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => { setDraft(task.text); setEditing(false); }} aria-label="Batal" className="rounded-lg p-1.5 text-on-surface-variant hover:text-error"><X size={17} /></button>
+            <button type="button" onClick={save} aria-label="Simpan" className="flex h-11 w-9 items-center justify-center rounded-lg text-primary hover:bg-surface-container-high/60"><Check size={17} /></button>
+            <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => { setDraft(task.text); setEditing(false); }} aria-label="Batal" className="flex h-11 w-9 items-center justify-center rounded-lg text-on-surface-variant hover:text-error"><X size={17} /></button>
           </>
         ) : (
           <>
             {!task.done && (
-              <button type="button" onClick={() => onPrioritas(task.id)} aria-pressed={!!task.priority} aria-label={`Prioritas: ${task.text}`} className={`rounded-lg p-1.5 hover:bg-surface-container-high/60 ${task.priority ? 'text-error' : 'text-on-surface-variant hover:text-primary'}`}><Flag size={15} /></button>
+              <button type="button" onClick={() => onPrioritas(task.id)} aria-pressed={!!task.priority} aria-label={`Prioritas: ${task.text}`} className={`flex h-11 w-9 items-center justify-center rounded-lg hover:bg-surface-container-high/60 ${task.priority ? 'text-error' : 'text-on-surface-variant hover:text-primary'}`}><Flag size={15} /></button>
             )}
-            <button type="button" onClick={() => setEditing(true)} aria-label={`Ubah: ${task.text}`} className="rounded-lg p-1.5 text-on-surface-variant hover:bg-surface-container-high/60 hover:text-primary"><Pencil size={15} /></button>
-            <button type="button" onClick={() => onRemove(task.id)} aria-label={`Hapus: ${task.text}`} className="rounded-lg p-1.5 text-on-surface-variant hover:text-error"><Trash2 size={15} /></button>
+            <button type="button" onClick={() => setEditing(true)} aria-label={`Ubah: ${task.text}`} className="flex h-11 w-9 items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high/60 hover:text-primary"><Pencil size={15} /></button>
+            <button type="button" onClick={() => onRemove(task.id)} aria-label={`Hapus: ${task.text}`} className="flex h-11 w-9 items-center justify-center rounded-lg text-on-surface-variant hover:text-error"><Trash2 size={15} /></button>
           </>
         )}
       </div>

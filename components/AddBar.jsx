@@ -26,13 +26,13 @@ export default function AddBar({ value, onChange, onSubmit }) {
           Akan disimpan: <strong className="text-on-surface">{u.text}</strong>{u.jam ? ` · jam ${tampilJam(u.jam)}` : ''}{u.priority ? ' · prioritas' : ''}
         </p>
       )}
-      <form onSubmit={onSubmit} className="ambient-shadow flex items-center gap-3 rounded-2xl border border-surface-container-highest bg-surface/85 px-4 py-3 backdrop-blur-2xl">
-        <button type="submit" aria-label="Tambah tugas" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-on-primary">
+      <form onSubmit={onSubmit} className="ambient-shadow flex items-center gap-3 rounded-2xl border border-surface-container-highest bg-surface/85 px-3 py-2 backdrop-blur-2xl">
+        <button type="submit" aria-label="Tambah tugas" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-on-primary">
           <Plus size={20} />
         </button>
         <label className="min-w-0 flex-1">
           <span className="sr-only">Tugas baru</span>
-          <input ref={inputRef} value={value} onChange={(e) => onChange(e.target.value)} placeholder="Tugas baru… (contoh: Telepon klien 14.00 !)"
+          <input ref={inputRef} value={value} onChange={(e) => onChange(e.target.value)} placeholder="Tugas baru… (mis. Telepon 14.00 !)"
             className="w-full border-none bg-transparent p-0 text-base text-on-surface outline-none placeholder:text-on-surface-variant focus:ring-0" />
         </label>
         <span className="hidden items-center gap-1 md:flex" aria-hidden="true">

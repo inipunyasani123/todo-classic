@@ -9,10 +9,10 @@ export default function Kerangka({ children }) {
       <Sidebar />
       <div className="relative min-w-0 flex-1">
         <header className="sticky top-0 z-30 flex items-center justify-between border-b border-surface-container-highest/40 bg-surface/80 px-5 py-3 backdrop-blur-xl md:hidden">
-          <Link href="/" className="font-display text-2xl text-primary">Hari Ini</Link>
+          <Link href="/" className="flex min-h-11 items-center font-display text-2xl text-primary">Hari Ini</Link>
           <nav aria-label="Halaman" className="flex items-center gap-1 text-sm font-semibold">
-            <Link href="/rekap" className="rounded-full px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-high/60">Rekap</Link>
-            <Link href="/panduan" className="rounded-full px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-high/60">Panduan</Link>
+            <Link href="/rekap" className="flex min-h-11 items-center rounded-full px-3 text-on-surface-variant hover:bg-surface-container-high/60">Rekap</Link>
+            <Link href="/panduan" className="flex min-h-11 items-center rounded-full px-3 text-on-surface-variant hover:bg-surface-container-high/60">Panduan</Link>
             <TemaTombol ringkas />
           </nav>
         </header>

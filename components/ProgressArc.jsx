@@ -25,7 +25,7 @@ export default function ProgressArc({ done, total }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center" aria-hidden="true">
         <span className="text-base font-bold text-on-surface md:text-xl">{done}/{total}</span>
-        <span className="text-[9px] font-medium uppercase tracking-[0.18em] text-on-surface-variant md:text-[10px] md:tracking-[0.2em]">Selesai</span>
+        <span className="text-xs font-medium uppercase tracking-[0.08em] text-on-surface-variant">Selesai</span>
       </div>
     </div>
   );

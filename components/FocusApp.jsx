@@ -75,8 +75,8 @@ export default function FocusApp() {
         <header className="sticky top-0 z-30 flex items-center justify-between border-b border-surface-container-highest/40 bg-surface/80 px-5 py-3 backdrop-blur-xl md:hidden">
           <p className="font-display text-2xl text-primary">Hari Ini</p>
           <nav aria-label="Halaman" className="flex items-center gap-1 text-sm font-semibold">
-            <Link href="/rekap" className="rounded-full px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-high/60">Rekap</Link>
-            <Link href="/panduan" className="rounded-full px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-high/60">Panduan</Link>
+            <Link href="/rekap" className="flex min-h-11 items-center rounded-full px-3 text-on-surface-variant hover:bg-surface-container-high/60">Rekap</Link>
+            <Link href="/panduan" className="flex min-h-11 items-center rounded-full px-3 text-on-surface-variant hover:bg-surface-container-high/60">Panduan</Link>
             <TemaTombol ringkas />
           </nav>
         </header>
@@ -96,7 +96,7 @@ export default function FocusApp() {
           <div className="mb-8 flex items-center gap-6 border-b border-surface-container-highest/50 md:hidden" role="group" aria-label="Saring">
             {FILTERS.map((f) => (
               <button key={f.key} type="button" onClick={() => setFilter(f.key)} aria-pressed={filter === f.key}
-                className={`-mb-px border-b-2 pb-2.5 text-sm font-semibold transition-all ${filter === f.key ? 'border-primary text-primary' : 'border-transparent text-on-surface-variant hover:text-on-surface'}`}>
+                className={`-mb-px inline-flex min-h-11 items-center gap-1 border-b-2 text-sm font-semibold transition-all ${filter === f.key ? 'border-primary text-primary' : 'border-transparent text-on-surface-variant hover:text-on-surface'}`}>
                 {f.label} <span className="font-normal">({counts[f.key]})</span>
               </button>
             ))}

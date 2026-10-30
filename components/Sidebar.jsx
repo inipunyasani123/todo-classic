@@ -27,7 +27,7 @@ export function TemaTombol({ ringkas = false }) {
   };
   if (ringkas) {
     return (
-      <button type="button" onClick={toggle} aria-label={dark ? 'Pakai mode terang' : 'Pakai mode gelap'} className="rounded-full p-2 text-primary transition-colors hover:bg-surface-container-high/50">
+      <button type="button" onClick={toggle} aria-label={dark ? 'Pakai mode terang' : 'Pakai mode gelap'} className="flex h-11 w-11 items-center justify-center rounded-full text-primary transition-colors hover:bg-surface-container-high/50">
         {dark ? <Sun size={20} /> : <Moon size={20} />}
       </button>
     );
